@@ -1,19 +1,25 @@
 #include<iostream>
+#include<string>
+
 using namespace std;
 
-
-bool find(int arr[], int target, int index, int size){
-	if(index == size){
-		return false;
-	}else{
-		return arr[index] == target || find(arr,target, index+1, size);
-	}
-}
-
 int main(){
+	
+	string str = "Vansh is a men";
 
-	int arr[] = {1,2,3,5,6};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int ans = find(arr, 5, 0, n); 
-    cout<<ans<<endl; 
-}
+	char c = 'a';
+
+	size_t found = str.find(c);
+	if(found != string::npos)
+	cout<<"First is "<< found<<endl;
+
+
+
+	 found = str.find(c, found+1);
+	if(found != string::npos)
+	cout<<"next is "<< found<<endl;
+
+
+	return 0;
+
+	}
